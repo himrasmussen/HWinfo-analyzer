@@ -1,0 +1,41 @@
+'''
+Tuples for GPU related checks.
+'''
+import random
+import helpers
+
+def main(csv_data):
+    message = ''
+
+    #memory error
+    parameter = ["GPU Memory Errors []"]
+    message += helpers.check_yes_parameter(parameter, csv_data)
+
+    #g12v rail failiure
+    parameter = ["GPU VRM Voltage In (VIN/+12V) [V]"]
+    message += helpers.check_min_parameter(parameter, csv_data, 11.40)
+    message += helpers.check_min_parameter(parameter, csv_data, 12.60)
+
+    #Usage
+    parameter = "GPU Utilization [%]"
+    data = csv_data[parameter]
+    message += "Gpu average usage: {}\n".format(sum(data)/len(data))
+
+    #Temperature
+    parameter = "GPU Thermal Diode [°C]"
+    try:
+        data = csv_data[parameter]
+    except KeyErro:
+        message += "Gpu temp: Key error"
+    else:
+        message += "Gpu temp max: {}\n".format(max(data))
+        message += "Gpu temps sample: {}\n".format(random.sample(data, 20))
+
+    #Average hz
+    data = csv_data["GPU Clock [MHz]"]
+    try:
+        message += "GPU avg hz: {}".format(sum(data) / len(data))
+    except KeyError:
+        message += "Gpu avg hz: Key not found."
+
+    return message
