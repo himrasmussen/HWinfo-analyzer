@@ -17,8 +17,8 @@ def main(csv_data):
     message += helpers.check_min_parameter([parameter], csv_data, min_value=4.75)
 
     parameter = "+12V [V]"
-    message += helpers.check_max_parameter([parameter], csv_data, max_value=11.40)
-    message += helpers.check_min_parameter([parameter], csv_data, min_value=12.60)
+    message += helpers.check_max_parameter([parameter], csv_data, max_value=12.60)
+    message += helpers.check_min_parameter([parameter], csv_data, min_value=11.40)
 
 
 
