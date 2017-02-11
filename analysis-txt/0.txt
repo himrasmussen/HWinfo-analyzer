@@ -1,0 +1,9 @@
+Max cpu core temp: 86.0
+Vcore min: 1.168
+Vcore max: 1.184
+Min GPU VRM Voltage In (VIN/+12V) [V]: 11.484
+Gpu average usage: 96.73913043478261
+Gpu temp max: 71.0
+Gpu temps sample: [58.0, 67.0, 70.0, 64.0, 70.0, 65.0, 70.0, 64.0, 65.0, 59.0, 65.0, 70.0, 70.0, 70.0, 69.0, 69.0, 70.0, 70.0, 69.0, 69.0]
+Max +12V [V]: 12.091
+Min +12V [V]: 11.774
