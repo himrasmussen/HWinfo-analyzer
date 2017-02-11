@@ -14,7 +14,7 @@ def main(csv_data):
     #g12v rail failiure
     parameter = ["GPU VRM Voltage In (VIN/+12V) [V]"]
     message += helpers.check_min_parameter(parameter, csv_data, 11.40)
-    message += helpers.check_min_parameter(parameter, csv_data, 12.60)
+    message += helpers.check_max_parameter(parameter, csv_data, 12.60)
 
     #Usage
     parameter = "GPU Utilization [%]"
