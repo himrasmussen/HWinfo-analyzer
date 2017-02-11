@@ -37,7 +37,7 @@ def main(csv_data):
                    "Core #3 Clock [MHz]"]
     for parameter in param_names:
         data = csv_data[parameter]
-        message += "{0} average hz: {1}\n".format(paramter, sum(data)/len(data))
+        message += "{0} average hz: {1}\n".format(parameter, round(sum(data)/len(data)))
 
 
     return message

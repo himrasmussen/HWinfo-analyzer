@@ -26,7 +26,7 @@ def main(csv_data):
     try:
         data = csv_data[parameter]
     except KeyErro:
-        message += "Gpu temp: Key error"
+        message += "Gpu temp: Key error\n"
     else:
         message += "Gpu temp max: {}\n".format(max(data))
         message += "Gpu temps sample: {}\n".format(random.sample(data, 20))
@@ -34,8 +34,8 @@ def main(csv_data):
     #Average hz
     data = csv_data["GPU Clock [MHz]"]
     try:
-        message += "GPU avg hz: {}".format(sum(data) / len(data))
+        message += "GPU avg hz: {}\n".format(sum(data) / len(data))
     except KeyError:
-        message += "Gpu avg hz: Key not found."
+        message += "Gpu avg hz: Key not found.\n"
 
     return message
