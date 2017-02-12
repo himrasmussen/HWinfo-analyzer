@@ -19,10 +19,10 @@ def allowed_file(filename):
 
 def txt_to_html(filename):
     file_n = filename.split(".")[0]
-    with open(os.path.join(app.config["ANALYSIS_FOLDER"], filename), 'r') as f:
+    with open(os.path.join(app.config["ANALYSIS_FOLDER"], filename), 'r', encoding="utf-8") as f:
         txt_lines = f.readlines()
 
-    with open(os.path.join(app.config["ANALYSIS_HTML_FOLDER"], file_n + ".html"), 'w') as f:
+    with open(os.path.join(app.config["ANALYSIS_HTML_FOLDER"], file_n + ".html"), 'w', encoding="utf-8") as f:
         f.write("""
                     <!doctype html>
                     <title>Anylisis #{}</title>
@@ -57,7 +57,7 @@ def upload_file():
             file_number = filename.split('.')[0]
             txt_filename = file_number + ".txt"
 
-            with open(os.path.join(app.config['ANALYSIS_FOLDER'], txt_filename), 'w') as f:
+            with open(os.path.join(app.config['ANALYSIS_FOLDER'], txt_filename), 'w', encoding="utf-8") as f:
                 message = hwinfo.main(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 f.write(message)
 
@@ -81,12 +81,12 @@ def upload_file():
 
 @app.route('/analysis-html/<file_number>')
 def show_analysis(file_number):
-    with open(os.path.join(app.config["ANALYSIS_HTML_FOLDER"], file_number + ".html")) as f:
+    with open(os.path.join(app.config["ANALYSIS_HTML_FOLDER"], file_number + ".html"), encoding="utf-8") as f:
         return ''.join(f.readlines())
 
 @app.route('/txt/<file_number>')
 def show_txt(file_number):
-    with open(os.path.join(app.config["ANALYSIS_FOLDER"], file_number + ".txt"), "r") as f:
+    with open(os.path.join(app.config["ANALYSIS_FOLDER"], file_number + ".txt"), "r", encoding="utf-8") as f:
         return "".join(f.readlines())
 
 
