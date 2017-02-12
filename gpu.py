@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 '''
 Tuples for GPU related checks.
 '''
