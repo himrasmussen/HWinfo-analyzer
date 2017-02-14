@@ -9,7 +9,7 @@ import voltage
 import helpers
 
 def main(filename):
-    with open(filename, newline='', encoding="utf-8") as f:
+    with open(filename, newline='') as f:
         reader = csv.DictReader(f)
         headers = next(reader)
 
