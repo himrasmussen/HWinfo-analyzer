@@ -18,14 +18,22 @@ def main(csv_data):
     	           "Core #1 [°C]",
                    "Core #2 [°C]",
                    "Core #3 [°C]"]
-    data = [i for parameter in param_names for i in csv_data[parameter]]
-    message += "Max cpu core temp: {}\n".format(max(data))
+    try:
+        data = [i for parameter in param_names for i in csv_data[parameter]]
+    except KeyError:
+        message += "No core temp data.\n"
+    else:
+        message += "Max cpu core temp: {}\n".format(max(data))
 
     #Vcore
     parameter = "Vcore [V]"
-    data = csv_data[parameter]
-    message += "Vcore min: {}\n".format(min(data))
-    message += "Vcore max: {}\n".format(max(data))
+    try:
+        data = csv_data[parameter]
+    except KeyError:
+        message += "Key error: {} not found.\n".format(parameter)
+    else:
+        message += "Vcore min: {}\n".format(min(data))
+        message += "Vcore max: {}\n".format(max(data))
 
     #Frequency
     def return_average(parameter, data):
@@ -35,9 +43,14 @@ def main(csv_data):
                    "Core #1 Clock [MHz]",
                    "Core #2 Clock [MHz]",
                    "Core #3 Clock [MHz]"]
+
     for parameter in param_names:
-        data = csv_data[parameter]
-        message += "{0} average hz: {1}\n".format(parameter, round(sum(data)/len(data)))
+        try:
+            data = csv_data[parameter]
+        except KeyError:
+            message += "Key Error: {} not found.\n".format(parameter)
+        else:
+            message += "{0} average hz: {1}\n".format(parameter, round(sum(data)/len(data)))
 
 
     return message
