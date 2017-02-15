@@ -10,7 +10,6 @@ __pycache__/
 .Python
 env/
 winenv/
-testfiles/
 
 build/
 develop-eggs/
