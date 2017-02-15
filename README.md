@@ -5,15 +5,23 @@ Automated HWinfo analyzing
 
 ###Gpu
 Memory errors
+
 G12v rail
+
 Average gpu utilization
+
 Average and 20 samples of thermal diode
+
 Average clock speed
+
 
 ###Cpu
 Thermal throtling
+
 Max temp
+
 Vcore V min/max
+
 Average clock speed
 
 ###Voltage
