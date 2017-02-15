@@ -9,7 +9,10 @@ def main(csv_data):
 
     #memory error
     parameter = ["GPU Memory Errors []"]
-    message += helpers.check_yes_parameter(parameter, csv_data)
+    try:
+        message += helpers.check_yes_parameter(parameter, csv_data)
+    except KeyError:
+        pass
 
     #g12v rail failiure
     parameter = ["GPU VRM Voltage In (VIN/+12V) [V]"]
