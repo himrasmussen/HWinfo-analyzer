@@ -71,8 +71,8 @@ def upload_file():
 
     return '''
     <!doctype html>
-    <title>Upload new File</title>
-    <h1>°Upload your hwinfo log.</h1>
+    <title>HW-info analyzer, the free hwinfo analyzing helper.</title>
+    <h1>Upload your hwinfo log.</h1>
     <form method=post enctype=multipart/form-data>
       <p><input type=file name=file>
          <input type=submit value=Upload>
