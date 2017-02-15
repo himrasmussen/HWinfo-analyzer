@@ -28,5 +28,6 @@ Average clock speed
 Checks if 3.3v, 5v and 12v are within 5% +/-
 
 
+&nbsp;
 
 The app can be used locally. Clone the repo, get Python 3.6 (or newer) and run hwinfo-analyzer.py. :)
