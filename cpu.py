@@ -35,10 +35,6 @@ def main(csv_data):
         message += "Vcore min: {}\n".format(min(data))
         message += "Vcore max: {}\n".format(max(data))
 
-    #Frequency
-    def return_average(parameter, data):
-        return "{0} average hz: {1}\n".format(paramter, sum(data)/len(data))
-
     param_names = ["Core #0 Clock [MHz]",
                    "Core #1 Clock [MHz]",
                    "Core #2 Clock [MHz]",
