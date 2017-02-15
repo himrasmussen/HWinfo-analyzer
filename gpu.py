@@ -8,14 +8,14 @@ def main(csv_data):
     message = ''
 
     #memory error
-    parameter = ["GPU Memory Errors []"]
+    parameter = "GPU Memory Errors []"
     try:
         message += helpers.check_yes_parameter(parameter, csv_data)
     except KeyError:
         pass
 
     #g12v rail failiure
-    parameter = ["GPU VRM Voltage In (VIN/+12V) [V]"]
+    parameter = "GPU VRM Voltage In (VIN/+12V) [V]"
     try:
         message += helpers.check_min_parameter(parameter, csv_data, 11.40)
         message += helpers.check_max_parameter(parameter, csv_data, 12.60)

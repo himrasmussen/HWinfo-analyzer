@@ -5,13 +5,14 @@ import helpers
 
 def main(csv_data):
     message = ''
-
+    
     #thermal throttling
     param_names = ["Core #0 Thermal Throttling [Yes/No]",
                    "Core #1 Thermal Throttling [Yes/No]",
                    "Core #2 Thermal Throttling [Yes/No]",
                    "Core #3 Thermal Throttling [Yes/No]"]
-    message += helpers.check_yes_parameter(param_names, csv_data)
+    for parameter in param_names:
+        message += helpers.check_yes_parameter(parameter, csv_data)
 
     #temp
     param_names = ["Core #0 [°C]",
