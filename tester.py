@@ -1,6 +1,6 @@
 import unittest
 import os
-from hwinfo_analyze import main
+from app.hwinfo_analyze import main
 
 class MainTestCase(unittest.TestCase):
     """Test if the analyzer works without fails."""
