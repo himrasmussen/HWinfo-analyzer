@@ -3,10 +3,10 @@
 
 import csv
 
-import gpu
-import cpu
-import voltage
-import helpers
+from . import gpu
+from . import cpu
+from . import voltage
+from . import helpers
 
 def main(filename):
     with open(filename, newline='', encoding='latin1') as f:

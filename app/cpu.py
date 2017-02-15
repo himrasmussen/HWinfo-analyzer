@@ -1,7 +1,7 @@
 '''
 '''
 
-import helpers
+from . import helpers
 
 def main(csv_data):
     message = ''
