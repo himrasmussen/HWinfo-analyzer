@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request, redirect, url_for
 from werkzeug.utils import secure_filename
-import hwinfo_analyze as hwinfo
+import .hwinfo_analyze as hwinfo
 from .hwinfo_analyze import gpu, cpu, voltage, helpers
 
 UPLOAD_FOLDER = 'uploads'
