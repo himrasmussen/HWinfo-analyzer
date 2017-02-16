@@ -65,7 +65,7 @@ def check_ripple(parameter, csv_data):
                 count += 1
 
         if len(csv_data[parameter]) / 100 * 80 <= count:
-            return "Ripple on {}.".format(parameter)
+            return "Ripple on {}.\n".format(parameter)
 
 
 
