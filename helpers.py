@@ -41,5 +41,34 @@ def check_yes_parameter(parameter, csv_data):
     else:
         return ''
 
+'''
+"The ripple limits, according to the ATX specification,
+are 120mV for the +12V and -12V rails,
+and 50mV for the remaining rails (5V, 3.3V and 5VSB).
+'''
+
+def check_ripple(parameter, csv_data):
+    max_ripple_values = {
+                            "+12V [V]": .12,
+                            "+5V [V]": .05,
+                            "+3.3V [V]": .05
+    }
+    count = 1
+
+    try:
+        avg = sum(csv_data[parameter]) / len(csv_data[parameter])
+    except KeyError:
+        return += "KeyError: {}\n".format(parameter)
+    else:
+        for i in csv_data[parameter]:
+            if abs(i - avg) > max_ripple_values[parameter]:
+                count += 1
+
+        if len(csv_data[parameter]) / 100 * 80 <= count:
+            return += "Ripple on {}.".format(parameter)
+
+
+
+
 def raise_warning(parameter, report_value=''):
     return "{0}: {1}\n".format(parameter, report_value)
