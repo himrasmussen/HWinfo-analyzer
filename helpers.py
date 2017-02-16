@@ -58,14 +58,14 @@ def check_ripple(parameter, csv_data):
     try:
         avg = sum(csv_data[parameter]) / len(csv_data[parameter])
     except KeyError:
-        return += "KeyError: {}\n".format(parameter)
+        return "KeyError: {}\n".format(parameter)
     else:
         for i in csv_data[parameter]:
             if abs(i - avg) > max_ripple_values[parameter]:
                 count += 1
 
         if len(csv_data[parameter]) / 100 * 80 <= count:
-            return += "Ripple on {}.".format(parameter)
+            return "Ripple on {}.".format(parameter)
 
 
 
