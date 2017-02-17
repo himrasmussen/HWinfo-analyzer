@@ -11,7 +11,7 @@ import helpers
 def main(filename):
     with open(filename, newline='', encoding='latin1') as f:
         reader = csv.DictReader(f)
-        headers = next(reader)
+        headers = reader.fieldnames
 
         data_dict = {header: [] for header in headers}
         for row in reader:
