@@ -8,7 +8,7 @@ def main(csv_data):
     message = ''
 
     #memory error
-    parameters = ["GPU Memory Errors []"]
+    parameter = "GPU Memory Errors []"
     try:
         message += helpers.check_yes_parameter(parameter, csv_data)
     except KeyError:
@@ -17,7 +17,7 @@ def main(csv_data):
 
     #g12v rail failiure
     #VR VIN (ATX +5V) [V] ?
-    parameter = ["GPU VRM Voltage In (VIN/+12V) [V]", "VR VIN (ATX +12V) [V]"]
+    parameters = ["GPU VRM Voltage In (VIN/+12V) [V]", "VR VIN (ATX +12V) [V]"]
     for parameter in parameters:
         try:
             message += helpers.check_min_parameter(parameter, csv_data, 11.40)
@@ -34,8 +34,8 @@ def main(csv_data):
             message += helpers.no_key(parameter)
         else:
             message += "{0} average usage: {1}\n".format(
+                                                    parameter,
                                                     round(sum(data)/len(data)),
-                                                    parameter
                                                     )
 
     #Temperature
@@ -50,8 +50,9 @@ def main(csv_data):
         else:
             message += "{} max: {}\n".format(parameter, max(data))
             message += "{} sample: {}\n".format(
-                                        parameter,
-                                        random.sample(data, min(len(data), 20)))
+                                parameter,
+                                sorted(random.sample(data, min(len(data), 20)))
+                                )
 
     #Average hz
     parameters = ["GPU Clock [MHz]", "GPU Video Clock [MHz]"]

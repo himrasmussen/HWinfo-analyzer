@@ -76,7 +76,7 @@ def find_header_column_string(header_list, parameter):
     return get_column_letter(header_list.index(parameter) + 1)
 
 def make_html(sorted_msg_dict):
-    htmldoc = "<h1> Here you are, your results.</h1><br>\n"
+    htmldoc = "<h1> Here you are, your results.</h1>\n"
     for key, msg in sorted_msg_dict.items():
         htmldoc += "<h2>{}</h2>\n".format(key.title())
         htmldoc += "<p>"
