@@ -4,7 +4,7 @@ from flask import Flask, request, redirect, url_for
 from werkzeug.utils import secure_filename
 
 import hwinfo_analyze as hwinfo
-import helpers 
+import helpers
 
 UPLOAD_FOLDER = 'uploads'
 ANALYSIS_FOLDER = 'analysis'
@@ -56,6 +56,8 @@ def upload_file():
       <p><input type=file name=file>
          <input type=submit value=Upload>
     </form>
+    <a href="https://hwinfotest.herokuapp.com/analysis/12">Sample log.</a>
+
     '''
 
 @app.route('/analysis/<file_number>')
