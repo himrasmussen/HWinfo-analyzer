@@ -56,7 +56,7 @@ def upload_file():
       <p><input type=file name=file>
          <input type=submit value=Upload>
     </form>
-    <a href="https://hwinfotest.herokuapp.com/analysis/12">Sample log.</a>
+    <a href="https://hwinfotest.herokuapp.com/analysis/13">Sample log.</a>
 
     '''
 
