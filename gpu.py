@@ -56,13 +56,12 @@ def main(csv_data):
     #Average hz
     parameters = ["GPU Clock [MHz]", "GPU Video Clock [MHz]"]
     for parameter in parameters:
-    try:
-        message += "{0} average: {1}\n".format(
-                                            parameter,
-                                            round(sum(data) / len(data)))
-    except KeyError:
-        message += helpers.no_key(parameter)
-
+        try:
+            message += "{0} average: {1}\n".format(
+                                                parameter,
+                                                round(sum(data) / len(data)))
+        except KeyError:
+            message += helpers.no_key(parameter)
 
 
     return helpers.sort_message(message)
