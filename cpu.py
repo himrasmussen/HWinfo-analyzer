@@ -40,7 +40,7 @@ def main(csv_data):
     try:
         data = csv_data[parameter]
     except KeyError:
-        message += helpers.no_key.format(parameter)
+        message += helpers.no_key(parameter)
     else:
         message += "Vcore min: {}\n".format(min(data))
         message += "Vcore max: {}\n".format(max(data))
@@ -54,7 +54,7 @@ def main(csv_data):
         try:
             data = csv_data[parameter]
         except KeyError:
-            message += helpers.no_key.format(parameter)
+            message += helpers.no_key(parameter)
         else:
             message += "{0} average MHz: {1}\n".format(parameter, round(sum(data)/len(data)))
 
