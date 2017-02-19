@@ -62,7 +62,7 @@ def upload_file():
          <input type=submit value=Upload>
     </form>
     '''
-    <a href="sample_analysis.html">Sample log.</a>
+    #<a href="sample_analysis.html">Sample log.</a>
 
 @app.route('/analysis/<file_number>')
 def show_analysis(file_number):
