@@ -16,9 +16,9 @@ GRAPH_FOLDER = 'graphs'
 ALLOWED_EXTENSIONS = set(['csv'])
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['ANALYSIS_FOLDER'] = ANALYSIS_FOLDER
-app.config['GRAPH_FOLDER'] = GRAPH_FOLDER
+# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+# app.config['ANALYSIS_FOLDER'] = ANALYSIS_FOLDER
+# app.config['GRAPH_FOLDER'] = GRAPH_FOLDER
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -39,13 +39,13 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            filename = str(len(os.listdir(app.config['UPLOAD_FOLDER']))) + '.csv'
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            filename = str(len(os.listdir("uploads"))) + '.csv'
+            file.save(os.path.join("uploads", filename))
 
             #The script runs here
             file_number = filename.split('.')[0]
-            with open(os.path.join(app.config['ANALYSIS_FOLDER'], file_number + ".html"), 'w') as f:
-                message = hwinfo.main(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            with open(os.path.join("analysis", file_number + ".html"), 'w') as f:
+                message = hwinfo.main(os.path.join("uploads", filename))
                 f.write(helpers.make_html(message))
 
             return redirect(url_for('show_analysis', file_number=file_number))
@@ -66,7 +66,7 @@ def upload_file():
 
 @app.route('/analysis/<file_number>')
 def show_analysis(file_number):
-    with open(os.path.join(app.config["ANALYSIS_FOLDER"], file_number + ".html")) as f:
+    with open(os.path.join("analysis", file_number + ".html")) as f:
         return ''.join(f.readlines())
 
 @app.route('/sample_analysis')
