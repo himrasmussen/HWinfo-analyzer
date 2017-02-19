@@ -4,11 +4,8 @@ Helper functions.
 
 
 import shutil
-<<<<<<< HEAD
 from openpyxl.utils.cell import _get_column_letter as get_column_letter
-=======
 import openpyxl
->>>>>>> 75916ad651dea5af819c8e12dab1ed29d5662b69
 
 #TODO: Header to Letters
 
@@ -20,11 +17,7 @@ def check_max_parameter(parameter, csv_data, max_value=1):
                                     report_value = max(csv_data[parameter])
                                     )
     except KeyError:
-<<<<<<< HEAD
         return no_key(parameter)
-=======
-        return "No such parameter ({})\n".format(parameter)
->>>>>>> 75916ad651dea5af819c8e12dab1ed29d5662b69
     else:
         return ''
 
@@ -36,11 +29,7 @@ def check_min_parameter(parameter, csv_data, min_value=1):
                                     report_value = min(csv_data[parameter])
                                     )
     except KeyError:
-<<<<<<< HEAD
         return no_key(parameter)
-=======
-        return "No such parameter ({})\n".format(parameter)
->>>>>>> 75916ad651dea5af819c8e12dab1ed29d5662b69
     else:
         return ''
 
@@ -49,21 +38,10 @@ def check_yes_parameter(parameter, csv_data):
         if "Yes" in csv_data[parameter]:
             return raise_warning(parameter, report_value="Yes")
     except KeyError:
-<<<<<<< HEAD
         return no_key(parameter)
     else:
         return ''
 
-def check_ripple(parameter, csv_data):
-    '''
-    "The ripple limits, according to the ATX specification,
-    are 120mV for the +12V and -12V rails,
-    and 50mV for the remaining rails (5V, 3.3V and 5VSB).
-    '''
-=======
-        return "No such parameter ({})\n".format(parameter)
-    else:
-        return ''
 
 '''
 "The ripple limits, according to the ATX specification,
@@ -72,22 +50,16 @@ and 50mV for the remaining rails (5V, 3.3V and 5VSB).
 '''
 
 def check_ripple(parameter, csv_data):
->>>>>>> 75916ad651dea5af819c8e12dab1ed29d5662b69
     max_ripple_values = {
                             "+12V [V]": .12,
                             "+5V [V]": .05,
                             "+3.3V [V]": .05
     }
     count = 1
-
     try:
         avg = sum(csv_data[parameter]) / len(csv_data[parameter])
     except KeyError:
-<<<<<<< HEAD
         return no_key(parameter)
-=======
-        return "KeyError: {}\n".format(parameter)
->>>>>>> 75916ad651dea5af819c8e12dab1ed29d5662b69
     else:
         for i in csv_data[parameter]:
             if abs(i - avg) > max_ripple_values[parameter]:
@@ -96,7 +68,6 @@ def check_ripple(parameter, csv_data):
         if len(csv_data[parameter]) / 100 * 80 <= count:
             return "Ripple on {}.\n".format(parameter)
 
-<<<<<<< HEAD
 def raise_warning(parameter, report_value=''):
     return "{0}: {1}\n".format(parameter, report_value)
 
@@ -144,10 +115,6 @@ def make_rel_dev_list(data):
     for value in data:
         rd_list.append(value - avg)
     return rd_list
-=======
-
-
 
 def raise_warning(parameter, report_value=''):
     return "{0}: {1}\n".format(parameter, report_value)
->>>>>>> 75916ad651dea5af819c8e12dab1ed29d5662b69
