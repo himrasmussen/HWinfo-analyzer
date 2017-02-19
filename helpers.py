@@ -4,6 +4,8 @@ Helper functions.
 
 
 import shutil
+import os
+
 from openpyxl.utils.cell import _get_column_letter as get_column_letter
 import openpyxl
 
@@ -118,3 +120,9 @@ def make_rel_dev_list(data):
 
 def raise_warning(parameter, report_value=''):
     return "{0}: {1}\n".format(parameter, report_value)
+
+def give_name(destination, the_file):
+    i = 0
+    while os.path.exists(os.path.join(destination, the_file)):
+        i += 1
+    return the_file.split('.')[0] + '_' + str(i) + the_file.split('.')[1]
