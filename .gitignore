@@ -94,7 +94,7 @@ winenv/
 .ropeproject
 
 #Local files
-graphs/*.png
+static/graphs/*.png
 uploads/*.csv
 uploads/*.CSV
 analysis/*.html

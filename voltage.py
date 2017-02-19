@@ -20,8 +20,8 @@ def main(csv_data):
     else:
         message += helpers.check_max_parameter(parameter, csv_data, max_value=3.47)
         message += helpers.check_min_parameter(parameter, csv_data, min_value=3.14)
-        image_path = graph_maker.draw_chart(data, parameter)
-        message += helpers.html_formatted_image(image_path)
+        #image_path = graph_maker.draw_chart(data, parameter)
+        #message += helpers.html_formatted_image(image_path)
         #message += helpers.check_ripple(parameter, csv_data)
 
     parameter = "+5V [V]"
@@ -32,8 +32,8 @@ def main(csv_data):
     else:
         message += helpers.check_max_parameter(parameter, csv_data, max_value=5.25)
         message += helpers.check_min_parameter(parameter, csv_data, min_value=4.75)
-        image_path = graph_maker.draw_chart(data, parameter)
-        message += helpers.html_formatted_image(image_path)
+        #image_path = graph_maker.draw_chart(data, parameter)
+        #message += helpers.html_formatted_image(image_path)
         #message += helpers.check_ripple(parameter, csv_data)
 
     parameter = "+12V [V]"
@@ -44,8 +44,8 @@ def main(csv_data):
     else:
         message += helpers.check_max_parameter(parameter, csv_data, max_value=12.60)
         message += helpers.check_min_parameter(parameter, csv_data, min_value=11.40)
-        image_path = graph_maker.draw_chart(data, parameter)
-        message += helpers.html_formatted_image(image_path)
+        #image_path = graph_maker.draw_chart(data, parameter)
+        #message += helpers.html_formatted_image(image_path)
         #message += helpers.check_ripple(parameter, csv_data)
 
 
