@@ -59,14 +59,12 @@ def main(csv_data):
     parameters = ["GPU Clock [MHz]", "GPU Video Clock [MHz]"]
     for parameter in parameters:
         try:
-            data = csv_data[parameter]
-        except KeyError:
-            message += helpers.no_key(parameter)
-        else:
             message += "{0} average: {1}\n".format(
                                                 parameter,
-                                                round(sum(data) / len(data))
-                                                )
+                                                round(sum(data) / len(data)))
+        except KeyError:
+            message += helpers.no_key(parameter)
+
 
     return helpers.sort_message(message)
 =======
