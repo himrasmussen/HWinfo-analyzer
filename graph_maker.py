@@ -13,7 +13,8 @@ def draw_chart(data_in, title):
     plt.ylabel("Voltage", fontsize=16)
     plt.tick_params(axis='both', which='major', labelsize=16)
     #plt.show()
-    file_number =  int(len(os.listdir("graphs")) / 3, 0) + 1
+    #file_number =  int(len(os.listdir("graphs")) / 3, 0) + 1
+    file_number = 9001
     file_name = "{0}_{1}.png".format(title, str(file_number))
     plt.savefig(os.path.join('graphs', file_name), bbox_inches='tight')
     plt.close()
