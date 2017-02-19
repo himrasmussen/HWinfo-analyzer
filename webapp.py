@@ -8,11 +8,13 @@ import helpers
 
 UPLOAD_FOLDER = 'uploads'
 ANALYSIS_FOLDER = 'analysis'
+GRAPH_FOLDER = 'graphs'
 ALLOWED_EXTENSIONS = set(['csv'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['ANALYSIS_FOLDER'] = ANALYSIS_FOLDER
+app.config['GRAPH_FOLDER'] = GRAPH_FOLDER
 
 def allowed_file(filename):
     return '.' in filename and \

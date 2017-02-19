@@ -91,7 +91,6 @@ def make_html(sorted_msg_dict):
 
 #Put all "no data" entries to the back. Put all entries starting with "--"
 #into the middle.
-
 def sort_message(msg):
     unsorted_msg = msg.split("\n")
     for idx, part in enumerate(unsorted_msg):
@@ -101,3 +100,16 @@ def sort_message(msg):
     sorted_msg = [x for x in unsorted_msg if x != '']
 
     return sorted_msg
+
+def get_relative_deviation(value, avg):
+    dif = value - avg
+    sum_ = value + avg
+    deviation = dif / sum_ / 2 * 100
+    return deviation
+
+def make_rel_dev_list(data):
+    rd_list = []
+    avg = round(sum(data) / len(data), 2)
+    for value in data:
+        rd_list.append(value - avg)
+    return rd_list
