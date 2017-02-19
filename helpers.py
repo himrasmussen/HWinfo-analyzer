@@ -80,9 +80,8 @@ def find_header_column_string(header_list, parameter):
     return get_column_letter(header_list.index(parameter) + 1)
 
 def make_html(sorted_msg_dict):
-    htmldoc = """
-    <!DOCTYPE html>
-    <title>Analysis</title>\n"""
+    htmldoc = """<!DOCTYPE html>
+<title>Analysis</title>\n"""
 
     htmldoc += "<h1> Here you are, your results.</h1>\n"
     for key, msg in sorted_msg_dict.items():
@@ -98,9 +97,9 @@ def make_html(sorted_msg_dict):
     return htmldoc
 
 def html_formatted_image(file_path):
-    #new_file_path = os.path.join('..', file_path)
+    new_file_path = os.path.join('..', file_path)
     return "<img src='{0}' alt='{1}' style='width:1155px;height='701px;>\n".format(
-                file_path,
+                new_file_path,
                 file_path.split('\\')[-1]
     )
 #Put all "no data" entries to the back. Put all entries starting with "--"
