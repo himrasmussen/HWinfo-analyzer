@@ -8,8 +8,9 @@ class MainTestCase(unittest.TestCase):
     def test_ALL_THE_CSVS(self):
         """Test all the csv files."""
         for csv in os.listdir("testfiles"):
-            print(csv)
-            main(os.path.join("testfiles", csv))
+            if csv.lower().endswith(".csv"):
+                print(csv)
+                main(os.path.join("testfiles", csv))
 
 
 

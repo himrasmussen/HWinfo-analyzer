@@ -29,7 +29,7 @@ def draw_multiple_lines(data_in):
         plt.plot(data_in["5v"], c='green', label="5V")
     if "3.3v" in data_in.keys():
         plt.plot(data_in["3.3v"], c='red', label="3.3V")
-    plt.title("Deviation from rail average in mV", fontsize=24)
+    plt.title("Deviation from rail average", fontsize=24)
     plt.xlabel('Red - 3.3v  Green - 5v  Blue - 12v', fontsize=16)
     plt.ylabel('mV', fontsize=16)
     plt.tick_params(axis='x', which='major', labelsize=16)
