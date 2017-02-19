@@ -23,9 +23,12 @@ def draw_chart(data_in, title):
 
 def draw_multiple_lines(data_in):
     fig = plt.figure(dpi=128, figsize=(10, 6))
-    plt.plot(data_in[2], c='blue', label="12V")
-    plt.plot(data_in[1], c='green', label="5V")
-    plt.plot(data_in[0], c='red', label="3.3V")
+    if "3.3v" in data_in.keys():
+        plt.plot(data_in["3.3v"], c='red', label="3.3V")
+    if "5v" in data_in.keys():
+        plt.plot(data_in["5v"], c='green', label="5V")
+    if "12v" in data_in.keys():
+        plt.plot(data_in["12v"], c='blue', label="12V")
     plt.title("Deviation from rail average in mV", fontsize=24)
     plt.xlabel('Red - 3.3v  Green - 5v  Blue - 12v', fontsize=16)
     plt.ylabel('mV', fontsize=16)

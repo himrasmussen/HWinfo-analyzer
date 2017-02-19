@@ -56,8 +56,12 @@ def main(csv_data):
     except KeyError:
         message += "No data for the tripple graph.\n"
     else:
-        da_list = [_3v_relative, _5_relative, _12v_relative]
-        image_path = graph_maker.draw_multiple_lines(da_list)
+        rail_data = {
+                    "3.3v": _3v_relative,
+                    "5v": _5_relative,
+                    "12v": _12v_relative
+                    }
+        image_path = graph_maker.draw_multiple_lines(rail_data)
         message += helpers.html_formatted_image(image_path)
 
 
