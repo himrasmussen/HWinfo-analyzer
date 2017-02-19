@@ -98,7 +98,7 @@ def make_html(sorted_msg_dict):
     return htmldoc
 
 def html_formatted_image(file_path):
-    new_file_path = os.path.join('..', file_path)
+    #new_file_path = os.path.join('..', file_path)
     return "<img src='{0}' alt='{1}' style='width:1155px;height='701px;>\n".format(
                 new_file_path,
                 file_path.split('\\')[-1]
