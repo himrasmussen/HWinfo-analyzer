@@ -94,7 +94,7 @@ winenv/
 .ropeproject
 
 #Local files
-graphs/*.png
-uploads/*.csv
-uploads/*.CSV
-analysis/*.html
+hwinfoflask/graphs/*.png
+hwinfoflask/uploads/*.csv
+hwinfoflask/uploads/*.CSV
+hwinfoflask/analysis/*.html
