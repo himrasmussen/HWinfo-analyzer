@@ -94,7 +94,14 @@ winenv/
 .ropeproject
 
 #Local files
+<<<<<<< HEAD
 hwinfoflask/graphs/*.png
 hwinfoflask/uploads/*.csv
 hwinfoflask/uploads/*.CSV
 hwinfoflask/analyses/*.html
+=======
+static/graphs/*.png
+uploads/*.csv
+uploads/*.CSV
+analysis/*.html
+>>>>>>> d78d7572f7d705c61a9a2d48c89c218050fe4e78
