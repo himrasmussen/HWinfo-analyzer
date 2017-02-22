@@ -97,4 +97,4 @@ winenv/
 hwinfoflask/graphs/*.png
 hwinfoflask/uploads/*.csv
 hwinfoflask/uploads/*.CSV
-hwinfoflask/analysis/*.html
+hwinfoflask/analyses/*.html
