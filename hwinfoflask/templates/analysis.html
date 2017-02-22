@@ -1,0 +1,25 @@
+<!doctype html>
+<!--link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}"-->
+<html>
+<link rel="stylesheet" type="text/css"
+   href="{{ url_for('static', filename='style.css') }}?version=2" />
+
+<link rel="stylesheet" href="/static/css/reset.css?q=1280549780"
+   type="text/css" media="screen" charset="utf-8" />
+<head>
+    <title>Your analysis</title>
+</head>
+<body>
+    <h1>Ich bin ein Franzose.</h1>
+    <p>
+        {% for key, value in analysis_dict.items() %}
+        <h2>{{ key }}</h2>
+        {% for i in value %}
+        {{ i }}<br />
+        {% endfor %}
+        {% endfor %}
+    </p>
+    <!-- <img src="/static/{{ graph_name }}" alt='find_the_easter_egg.png' style='width:1155px;height='701px;> -->
+    <img src="{{ url_for('graph', filename=graph_name) }}" alt='find_the_easter_egg.png' style='width:1155px;height='701px;>
+</body>
+</html>

@@ -1,0 +1,1 @@
+from .hwinfoflask import app
