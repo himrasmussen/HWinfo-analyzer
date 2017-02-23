@@ -1,9 +1,15 @@
 <!doctype html>
-<link rel="stylesheet" type="text/css"
-   href="{{ url_for('static', filename='style.css') }}?version=3" />
-<title>HW-info analyzer, the free hwinfo analyzing helper.</title>
-<h1>Upload your hwinfo log.</h1>
-<form method=post enctype=multipart/form-data>
+<html>
+<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='style.css') }}"
+
+<head>
+    <title>HW-info analyzer, the free hwinfo analyzing helper.</title>
+</head>
+<body>
+    <h1>Upload your hwinfo loga.</h1>
+    <form method=post enctype=multipart/form-data>
   <p><input type=file name=file>
-     <input type=submit value=Upload>
-</form>
+     <input type=submit value=Upload></p>
+     </form>
+</body>
+</html>
