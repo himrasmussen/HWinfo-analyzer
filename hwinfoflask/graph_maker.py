@@ -2,15 +2,18 @@ from matplotlib import pyplot as plt
 import os
 
 from flask import url_for
+
+
 # Plot data.
 #
 #
 def draw_chart(data_in):
     print(os.getcwd())
-    GRAPH_FOLDER_PATH = ASSET_FOLDER = os.path.join(
-                                                    "hwinfoflask",
-                                                    "graphs"
-                                                    )
+    GRAPH_FOLDER_PATH = os.path.join(
+                                    "hwinfoflask",
+                                    "dynamic",
+                                    "graphs"
+                                    )
     fig = plt.figure(dpi=128, figsize=(10, 6))
     if "12v" in data_in.keys():
         plt.plot(data_in["12v"], c='blue', label="12V")

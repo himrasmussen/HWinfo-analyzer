@@ -100,8 +100,6 @@ hwinfoflask/uploads/*.csv
 hwinfoflask/uploads/*.CSV
 hwinfoflask/analysis/*.html
 =======
-static/graphs/*.png
-uploads/*.csv
-uploads/*.CSV
-analysis/*.html
->>>>>>> d78d7572f7d705c61a9a2d48c89c218050fe4e78
+dynamic/graphs/*.png
+dynamic/uplaods/*.csv
+dynamic/analyses/*.html
