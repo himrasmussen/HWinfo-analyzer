@@ -95,5 +95,5 @@ winenv/
 
 #Local files
 dynamic/graphs/*.png
-dynamic/uplaods/*.csv
+dynamic/uploads/*.csv
 dynamic/analyses/*.html
