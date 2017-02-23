@@ -94,12 +94,6 @@ winenv/
 .ropeproject
 
 #Local files
-<<<<<<< HEAD
-hwinfoflask/graphs/*.png
-hwinfoflask/uploads/*.csv
-hwinfoflask/uploads/*.CSV
-hwinfoflask/analysis/*.html
-=======
 dynamic/graphs/*.png
 dynamic/uplaods/*.csv
 dynamic/analyses/*.html

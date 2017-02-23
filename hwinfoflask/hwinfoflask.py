@@ -16,9 +16,11 @@ from . import hwinfo_analyze as hwinfo
 
 app = Flask(__name__)
 
+<<<<<<< HEAD
 UPLOAD_FOLDER = os.path.join(app.root_path, "dynamic", "uploads")
 ANALYSES_FOLDER = os.path.join(app.root_path, "dynamic", "analyses")
 TEMPLATE_FOLDER = os.path.join(app.root_path, "static", "templates")
+
 ALLOWED_EXTENSIONS = set(['csv'])
 
 
@@ -45,12 +47,14 @@ def home():
             filename =  filenumber + '.csv'
             file.save(os.path.join(UPLOAD_FOLDER, filename))
 
+
             analysis_dict, graph_name = hwinfo.main(
                                                 os.path.join(
                                                     UPLOAD_FOLDER,
                                                     filename
                                                     )
                                                 )
+
 
             rendered_page = render_template(
                                             'analysis.html',

@@ -96,11 +96,7 @@ def make_html(sorted_msg_dict):
 
     return htmldoc
 
-def html_formatted_image(file_name):
-    return "<img src='{0}' alt='{1}' style='width:1155px;height='701px;>\n".format(
-                os.path.join("..", "graphs", file_name),
-               file_name
-    )
+    
 #Put all "no data" entries to the back. Put all entries starting with "--"
 #into the middle.
 def sort_message(msg):

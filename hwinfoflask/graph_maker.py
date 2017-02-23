@@ -2,8 +2,6 @@ from matplotlib import pyplot as plt
 import os
 
 from flask import url_for
-
-
 # Plot data.
 #
 #
@@ -14,6 +12,7 @@ def draw_chart(data_in):
                                     "dynamic",
                                     "graphs"
                                     )
+                                    
     fig = plt.figure(dpi=128, figsize=(10, 6))
     if "12v" in data_in.keys():
         plt.plot(data_in["12v"], c='blue', label="12V")
