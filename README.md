@@ -1,5 +1,5 @@
 # HWinfo-analyzer
-Automated HWinfo analyzing
+Automated HWinfo csv-sensor log analyzing
 
 ## Covered parameters
 
@@ -26,8 +26,9 @@ Average clock speed
 
 ###Voltage
 Checks if 3.3v, 5v and 12v are within 5% +/-
+Graph of each rail's plot's deviation from rail average
 
 
 &nbsp;
 
-The app can be used locally. Clone the repo, get Python 3.6 (or newer) and run hwinfo-analyzer.py. :)
+Currently the app can't be run locally.
